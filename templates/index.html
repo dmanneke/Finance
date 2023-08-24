@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+<style>
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+</style>
+
+
+<table>
+    <tr>
+      <th>Stock</th>
+      <th>Number of shares</th>
+      <th>Current price</th>
+      <th>Total value</th>
+    </tr>
+
+    {% for stock in portfolio %}
+        <tr>
+        <td>{{ stock["symbol"] }}</td>
+        <td>{{ stock["total_shares"] }}</td>
+        <td>{{ stock["curr_price"]}}</td>
+        <td>{{ stock["total_value"]}}</td>
+        </tr>
+    {% endfor %}
+  </table>
+  <br>
+  <br>
+
+  <table>
+    <tr>
+        <th>Cash</th>
+        <th>Value portfolio</th>
+    </tr>
+    <tr>
+        <td>{{ cash}}</td>
+        <td>{{ grand_total}}</td>
+    </tr>
+  </table>
+
+{% endblock %}

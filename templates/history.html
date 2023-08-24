@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+<style>
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+</style>
+
+
+<table>
+    <tr>
+      <th>Stock</th>
+      <th>Buy/Sell</th>
+      <th>Price</th>
+      <th>Time</th>
+      <th>num_shares</th>
+    </tr>
+
+    {%for transaction in history%}
+        <tr>
+        <td>{{transaction["symbol"]}}</td>
+        {%if transaction["num_shares"] > 0%}
+            <td>Buy</td>
+        {%else%}
+            <td>Sell</td>
+        {%endif%}
+        <td>{{transaction["price"]}}</td>
+        <td>{{transaction["time"]}}</td>
+        <td>{{transaction["num_shares"]|abs}}</td>
+        </tr>
+    {%endfor%}
+  </table>
+  <br>
+  <br>
+
+
+{% endblock %}

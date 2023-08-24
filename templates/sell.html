@@ -1,0 +1,23 @@
+
+
+
+{% block main %}
+    <form action="/sell" method="post">
+        <div class="mb-3">
+            <select name = "symbol">
+                    <option value = None disabled selected="selected">Stock</option>
+                {%for stock in portfolio%}
+                    {%set symbol = stock["symbol"]%}
+                    <option value={{ symbol }}>{{symbol}}</option>
+                {%endfor%}
+            </select>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Stock symbol" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="shares" placeholder="Number of shares" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}
