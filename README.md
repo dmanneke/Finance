@@ -3,4 +3,4 @@
 Web application where users can "buy" and "sell" stocks.
 
 
-<img width="808" alt="finance" src="https://github.com/dmanneke/Finance/assets/135234700/c0061e54-ae28-451f-af32-8d90ce341cad">
+<img width="421" alt="Screenshot 2023-08-26 at 18 28 42" src="https://github.com/dmanneke/Finance/assets/135234700/6f5fe72c-d9d9-48ae-a74b-9e172aac6f7b">
